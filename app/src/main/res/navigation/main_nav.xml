@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/chatsFragment">
+
+    <fragment
+        android:id="@+id/chatsFragment"
+        android:name="com.rohit.chat.ui.chats.ChatsFragment"
+        android:label="Chats"
+        tools:layout="@layout/fragment_chats">
+        <action
+            android:id="@+id/action_chatsFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_chatsFragment_to_requestsFragment"
+            app:destination="@id/requestsFragment" />
+        <action
+            android:id="@+id/action_chatsFragment_to_messageFragment"
+            app:destination="@id/messageFragment" />
+        <action
+            android:id="@+id/action_chatsFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.rohit.chat.ui.settings.SettingsFragment"
+        android:label="Settings"
+        tools:layout="@layout/fragment_settings">
+        <action
+            android:id="@+id/action_settingsFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.rohit.chat.ui.search.SearchFragment"
+        android:label="Search Users"
+        tools:layout="@layout/fragment_search" />
+
+    <fragment
+        android:id="@+id/requestsFragment"
+        android:name="com.rohit.chat.ui.requests.RequestsFragment"
+        android:label="Chat Requests"
+        tools:layout="@layout/fragment_requests" />
+
+    <fragment
+        android:id="@+id/groupsFragment"
+        android:name="com.rohit.chat.ui.groups.GroupsFragment"
+        android:label="Groups"
+        tools:layout="@layout/fragment_groups" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.rohit.chat.ui.profile.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/messageFragment"
+        android:name="com.rohit.chat.ui.chats.MessageFragment"
+        android:label="Chat"
+        tools:layout="@layout/fragment_message">
+        <argument
+            android:name="chatId"
+            app:argType="string" />
+    </fragment>
+
+</navigation>

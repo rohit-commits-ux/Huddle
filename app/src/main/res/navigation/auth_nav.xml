@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auth_nav"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.rohit.chat.ui.auth.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.rohit.chat.ui.auth.SignUpFragment"
+        android:label="Sign Up"
+        tools:layout="@layout/fragment_sign_up">
+        <action
+            android:id="@+id/action_signUpFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/phoneAuthFragment"
+        android:name="com.rohit.chat.ui.auth.PhoneAuthFragment"
+        android:label="Phone Authentication"
+        tools:layout="@layout/fragment_phone_auth">
+        <action
+            android:id="@+id/action_phoneAuthFragment_to_setupProfileFragment"
+            app:destination="@id/setupProfileFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/setupProfileFragment"
+        android:name="com.rohit.chat.ui.auth.SetupProfileFragment"
+        android:label="Setup Profile"
+        tools:layout="@layout/fragment_setup_profile" />
+</navigation>
